@@ -132,11 +132,14 @@ const Palvelut = () => {
 
       {/* ── Palvelulista — auto-cycling tabs ── */}
       <section id="palvelut-lista" className="relative pt-32 sm:pt-52 pb-16 sm:pb-32 overflow-hidden">
+        {/* Background image as section backdrop */}
+        <img src={backgroundFeim} alt="" className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none opacity-25" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-black/70 to-black pointer-events-none" />
+
         <div className="max-w-7xl lg:max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-16 relative z-10">
 
           {/* Navigation tabs */}
           <div className="relative flex gap-0 mb-14">
-            {/* Animated underline indicator */}
             <motion.div
               className="absolute bottom-0 h-[1px] bg-gradient-to-r from-transparent via-blue-500 to-transparent"
               animate={{
@@ -161,7 +164,6 @@ const Palvelut = () => {
                     activeIndex === i ? "text-white" : "text-neutral-600 group-hover:text-neutral-400"
                   }`}>{s.title}</span>
                 </div>
-                {/* Progress bar for active tab */}
                 {activeIndex === i && (
                   <motion.span
                     key={`progress-${activeIndex}`}
@@ -235,11 +237,6 @@ const Palvelut = () => {
           </div>
         </div>
       </section>
-
-      {/* Background image divider */}
-      <div className="relative w-full h-[40vh] sm:h-[50vh] overflow-hidden">
-        <img src={backgroundFeim} alt="" className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none" />
-      </div>
 
       {/* ── Lähestymistapa ── */}
       <section className="relative py-16 sm:py-24 md:py-32 overflow-hidden">
