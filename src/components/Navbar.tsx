@@ -117,12 +117,27 @@ const Navbar: React.FC = () => {
           >
             Etusivu
           </Link>
+          <span className="text-lg text-white/40 font-semibold py-2 px-8">Palvelut</span>
           <Link
-            to="/palvelut"
+            to="/verkkosivut"
             onClick={() => setIsOpen(false)}
-            className="text-2xl text-white/80 hover:text-white font-semibold py-4 px-8 rounded-xl transition-colors"
+            className="text-2xl text-white/80 hover:text-white font-semibold py-3 px-12 rounded-xl transition-colors"
           >
-            Palvelut
+            Verkkosivut
+          </Link>
+          <Link
+            to="/web-sovellukset"
+            onClick={() => setIsOpen(false)}
+            className="text-2xl text-white/80 hover:text-white font-semibold py-3 px-12 rounded-xl transition-colors"
+          >
+            Web-sovellukset
+          </Link>
+          <Link
+            to="/prototyypit"
+            onClick={() => setIsOpen(false)}
+            className="text-2xl text-white/80 hover:text-white font-semibold py-3 px-12 rounded-xl transition-colors"
+          >
+            Prototyypit
           </Link>
           <Link
             to="/yhteystiedot"
