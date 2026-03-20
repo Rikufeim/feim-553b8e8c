@@ -23,7 +23,7 @@ import { lazy, Suspense, useEffect } from "react";
 const Verkkosivut = lazy(() => import("./pages/Verkkosivut"));
 const WebSovellukset = lazy(() => import("./pages/WebSovellukset"));
 const Prototyypit = lazy(() => import("./pages/Prototyypit"));
-const Palvelut = lazy(() => import("./pages/Palvelut"));
+
 const Referenssit = lazy(() => import("./pages/Referenssit"));
 const Yhteystiedot = lazy(() => import("./pages/Yhteystiedot"));
 const TilaaVedos = lazy(() => import("./pages/TilaaVedos"));
