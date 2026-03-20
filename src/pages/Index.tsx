@@ -189,7 +189,7 @@ const Hero = ({ onStartProject }: { onStartProject: () => void }) => {
           <Link to="/yhteystiedot#vedos" className="inline-flex items-center justify-center px-8 py-4 font-bold text-base sm:text-base rounded-full transition-all duration-300 hover:scale-105" style={{ backgroundColor: isDark ? '#ffffff' : '#171717', color: isDark ? '#000000' : '#ffffff' }}>
             Pyydä tarjous
           </Link>
-          <Link to="/palvelut" className={`inline-flex items-center justify-center gap-2 px-8 py-4 border font-medium text-base sm:text-base rounded-full transition-all duration-300 ${isDark ? 'border-white/15 text-white hover:bg-white/5' : 'border-black/15 text-neutral-800 hover:bg-black/5'}`}>
+          <Link to="/verkkosivut" className={`inline-flex items-center justify-center gap-2 px-8 py-4 border font-medium text-base sm:text-base rounded-full transition-all duration-300 ${isDark ? 'border-white/15 text-white hover:bg-white/5' : 'border-black/15 text-neutral-800 hover:bg-black/5'}`}>
             Tutustu palveluihin
           </Link>
         </div>
