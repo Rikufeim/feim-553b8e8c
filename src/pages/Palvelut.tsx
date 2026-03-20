@@ -236,6 +236,11 @@ const Palvelut = () => {
         </div>
       </section>
 
+      {/* Background image divider */}
+      <div className="relative w-full h-[40vh] sm:h-[50vh] overflow-hidden">
+        <img src={backgroundFeim} alt="" className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none" />
+      </div>
+
       {/* ── Lähestymistapa ── */}
       <section className="relative py-16 sm:py-24 md:py-32 overflow-hidden">
         <div className="absolute inset-0 z-0" style={{ background: "radial-gradient(ellipse at 30% 50%, #0021ff12 0%, transparent 55%), #000" }} />
@@ -269,11 +274,6 @@ const Palvelut = () => {
           </div>
         </div>
       </section>
-
-      {/* Background image divider */}
-      <div className="relative w-full h-[40vh] sm:h-[50vh] overflow-hidden">
-        <img src={backgroundFeim} alt="" className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none" />
-      </div>
 
       {/* ── CTA ── */}
       <section className="relative py-20 sm:py-32 md:py-40 overflow-hidden">
