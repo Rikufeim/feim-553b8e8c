@@ -17,8 +17,8 @@ const Prototyypit = () => {
         url: "https://feim.fi/prototyypit"
       }}
       hero={{
-        label: "Prototyypit & MVP",
-        title: "Muuta sovellusidea konkreettiseksi prototyypiksi",
+        title: "Muuta ideasi prototyypiksi",
+        titlePlacement: "overlay-center",
         intro: "",
         cta: "",
         ctaHref: "/yhteystiedot#vedos"
@@ -55,7 +55,7 @@ const Prototyypit = () => {
       }}
       cta={{
         title: "Tilaa maksuton vedos ideastasi",
-        description: "Kerro ideasi — rakennamme yhdessä ensimmäisen konkreettisen askeleen kohti valmista tuotetta.",
+        description: "",
         buttonText: "Tilaa maksuton vedos",
         buttonHref: "/yhteystiedot#vedos"
       }}

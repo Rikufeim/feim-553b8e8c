@@ -1,4 +1,5 @@
 import ServicePageLayout from '@/components/ServicePageLayout';
+import hinnastoBgCustom from '@/assets/hinnasto-bg-custom.png';
 
 const WebSovellukset = () => (
   <ServicePageLayout
@@ -61,10 +62,11 @@ const WebSovellukset = () => (
     }}
     cta={{
       title: "Kerro ideastasi",
-      description: "Olitpa vasta ideointivaiheessa tai sinulla on selkeä konsepti — keskustellaan miten lähdetään liikkeelle.",
+      description: "",
       buttonText: "Keskustele sovellusideastasi",
       buttonHref: "/yhteystiedot#vedos"
     }}
+    ctaImageBelowSrc={hinnastoBgCustom}
   />
 );
 

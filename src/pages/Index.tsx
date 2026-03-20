@@ -13,6 +13,7 @@ import svcWebappImg from '@/assets/service-webapp-1.webp';
 import svcProtoImg from '@/assets/service-proto-1.webp';
 import ContactCard from '@/components/ContactCard';
 import Footer from '@/components/Footer';
+import hinnastoBgCustom from '@/assets/hinnasto-bg-custom.png';
 import { useNavbarVisibility } from '@/components/NavbarVisibility';
 import HeroBackground from '@/components/HeroBackground';
 import { useTheme } from '@/components/ThemeContext';
@@ -1591,11 +1592,19 @@ const Contact = () => {
   return (
     <section id="yhteystiedot" className="relative py-16 sm:py-24 md:py-40 overflow-hidden content-auto">
       <div className="absolute inset-0 pointer-events-none">
+        <img
+          src={hinnastoBgCustom}
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover z-0"
+          style={{ objectPosition: 'center 55%' }}
+          loading="lazy"
+          decoding="async"
+        />
         <div className="absolute inset-0 bg-gradient-to-b from-[#05070d]/96 via-[#04060c]/94 to-[#03050a]/98" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_14%_20%,rgba(0,26,102,0.32),transparent_58%),radial-gradient(ellipse_at_82%_86%,rgba(0,26,102,0.24),transparent_62%),radial-gradient(ellipse_at_50%_100%,rgba(0,26,102,0.18),transparent_72%)]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/68 via-black/34 to-black/72" />
-        <div className="absolute top-0 inset-x-0 h-24 sm:h-28 bg-gradient-to-b from-black via-black/90 to-transparent" />
-        <div className="absolute bottom-0 inset-x-0 h-24 sm:h-28 bg-gradient-to-t from-black via-black/90 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/45 to-black/88" />
+        <div className="absolute top-0 inset-x-0 h-24 sm:h-28 bg-gradient-to-b from-black via-black/95 to-transparent" />
+        <div className="absolute bottom-0 inset-x-0 h-24 sm:h-28 bg-gradient-to-t from-black via-black/95 to-transparent" />
       </div>
       <div className="max-w-7xl lg:max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-16 relative z-10">
 

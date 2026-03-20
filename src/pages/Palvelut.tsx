@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import backgroundFeim from '@/assets/background-feim.png';
+import hinnastoBgCustom from '@/assets/hinnasto-bg-custom.png';
 import svcVerkkosivut1 from '@/assets/service-verkkosivut-1.webp';
 import svcVerkkosivut2 from '@/assets/service-verkkosivut-2.webp';
 import svcVerkkosivut3 from '@/assets/service-verkkosivut-3.webp';
@@ -274,7 +275,15 @@ const Palvelut = () => {
 
       {/* ── CTA ── */}
       <section className="relative py-20 sm:py-32 md:py-40 overflow-hidden">
-        <div className="absolute inset-0 z-0" style={{ background: "radial-gradient(ellipse at 50% 60%, #0021ff1e 0%, transparent 55%), #000" }} />
+        <img
+          src={hinnastoBgCustom}
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none z-0"
+          style={{ objectPosition: 'center 55%' }}
+          loading="lazy"
+          decoding="async"
+        />
+        <div className="absolute inset-0 z-[1] bg-gradient-to-b from-black/0 via-black/20 to-black/70 pointer-events-none" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-16 relative z-10 text-center">
           <FadeIn>
             <p className="text-xs sm:text-sm font-medium text-blue-400/70 tracking-widest uppercase mb-4 sm:mb-6">Aloita tästä</p>
@@ -282,9 +291,20 @@ const Palvelut = () => {
             <p className="text-neutral-400 text-lg max-w-lg mx-auto mb-12 leading-relaxed">
               Kerro projektistasi ja saat konkreettisen ehdotuksen siitä, miten kannattaa lähteä liikkeelle.
             </p>
-            <Link to="/tilaa-vedos" className="inline-flex items-center justify-center px-10 py-5 bg-white hover:bg-neutral-100 text-black font-bold text-lg sm:text-lg rounded-full transition-all duration-300 hover:scale-105">
-              Tilaa maksuton vedos
-            </Link>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link
+                to="/tilaa-vedos"
+                className="inline-flex items-center justify-center px-10 py-5 bg-white hover:bg-neutral-100 text-black font-bold text-lg sm:text-lg rounded-full transition-all duration-300 hover:scale-105"
+              >
+                Tilaa maksuton vedos
+              </Link>
+              <Link
+                to="/prototyypit"
+                className="inline-flex items-center justify-center px-10 py-5 bg-white/[0.06] hover:bg-white/[0.10] border border-white/[0.14] text-white font-bold text-lg sm:text-lg rounded-full transition-all duration-300 hover:scale-105"
+              >
+                Tutustu prototyyppeihin
+              </Link>
+            </div>
           </FadeIn>
         </div>
       </section>

@@ -5,8 +5,7 @@ import { Link } from 'react-router-dom';
 import { useTheme } from '@/components/ThemeContext';
 import serviceVerkkosivut1 from '@/assets/service-verkkosivut-1.png';
 import heroVerkkosivut from '@/assets/hero-verkkosivut.webp';
-import hinnastoBg from '@/assets/hinnasto-bg.webp';
-import hinnastoBgMobile from '@/assets/hinnasto-bg-mobile.webp';
+import hinnastoBgCustom from '@/assets/hinnasto-bg-custom.png';
 import serviceVerkkosivut2 from '@/assets/service-verkkosivut-2.png';
 import serviceVerkkosivut3 from '@/assets/service-verkkosivut-3.png';
 import refLujainfra from '@/assets/ref-lujainfra.png';
@@ -23,7 +22,7 @@ const pricingPlans = [
   {
     name: "Yksinkertainen käyntikortti",
     subtitle: "Landing page / 1 sivu",
-    price: "699",
+    price: "499",
     features: [
       "1-sivuinen landing page",
       "Moderni ja selkeä ulkoasu",
@@ -52,7 +51,7 @@ const pricingPlans = [
   {
     name: "Multipage",
     subtitle: "4–7 sivua",
-    price: "1200",
+    price: "1500",
     highlighted: true,
     features: [
       "4–7 sivua",
@@ -68,7 +67,7 @@ const pricingPlans = [
   {
     name: "Kasvupaketti",
     subtitle: "Täysi digitaalinen kokonaisuus",
-    price: "1500",
+    price: "2000",
     features: [
       "Laaja, räätälöity monisivuinen nettisivusto",
       "Edistynyt UI Design ja UX-ajattelu",
@@ -85,8 +84,8 @@ const pricingPlans = [
 const maintenancePlans = [
   {
     name: "Perusylläpito",
-    price: "200",
-    unit: "/ vuosi",
+    price: "17",
+    unit: "/ kk",
     features: [
       "Sivuston kunnossapito",
       "Pienet päivitykset",
@@ -95,11 +94,12 @@ const maintenancePlans = [
   },
   {
     name: "Laajennettu ylläpito",
-    price: "450",
-    unit: "/ vuosi",
+    price: "33",
+    unit: "/ kk",
     features: [
       "Kaikki perusylläpidon palvelut",
       "Jatkuva tekoälyoptimointi",
+      "Jatkuva tekoäly sisällön tuotanto",
       "Sisällön päivitykset ja kehitys",
       "Laajempi analytiikka ja raportointi",
     ],
@@ -174,19 +174,19 @@ const PricingSection = () => {
   const heading = isDark ? 'text-white' : 'text-neutral-900';
   const desc = isDark ? 'text-neutral-400' : 'text-neutral-500';
   const cardBase = isDark
-    ? 'bg-white/[0.02] border border-white/[0.06] hover:bg-white/[0.04] hover:border-white/[0.12]'
-    : 'bg-black/[0.02] border border-black/[0.06] hover:bg-black/[0.04] hover:border-black/[0.12]';
+    ? 'bg-gradient-to-b from-[#0b132b] via-[#070a12] to-[#070a12] border border-white/[0.12] shadow-[inset_0_1px_0_rgba(255,255,255,0.10),0_22px_70px_rgba(0,0,0,0.55)] hover:border-white/[0.20]'
+    : 'bg-black/[0.02] border border-black/[0.08] hover:bg-black/[0.04] hover:border-black/[0.14]';
   const cardHighlighted = isDark
-    ? 'bg-white/[0.06] border-2 border-blue-500/30 hover:border-blue-500/50'
+    ? 'bg-gradient-to-b from-[#123060] via-[#0a1733] to-[#070a12] border-2 border-blue-400/40 shadow-[inset_0_1px_0_rgba(255,255,255,0.14),0_0_55px_rgba(59,130,246,0.35),0_22px_70px_rgba(0,0,0,0.55)] hover:border-blue-400/65'
     : 'bg-black/[0.03] border-2 border-neutral-400/40 hover:border-neutral-400/60';
   const badgeBg = isDark ? 'bg-blue-500' : 'bg-neutral-800';
   const priceColor = isDark ? 'text-white' : 'text-neutral-900';
-  const featureIcon = isDark ? 'text-blue-500/70' : 'text-neutral-400';
+  const featureIcon = isDark ? 'text-cyan-300/85' : 'text-neutral-400';
   const featureText = isDark ? 'text-neutral-300' : 'text-neutral-600';
   const footerBorder = isDark ? 'border-white/[0.06]' : 'border-black/[0.06]';
-  const btnHighlighted = isDark ? 'bg-white text-black hover:bg-neutral-200' : 'bg-black text-white hover:bg-neutral-800';
+  const btnHighlighted = isDark ? 'bg-blue-400/15 text-blue-100 border border-blue-400/35 hover:bg-blue-400/20' : 'bg-black text-white hover:bg-neutral-800';
   const btnNormal = isDark
-    ? 'bg-white/[0.06] text-white border border-white/[0.1] hover:bg-white/[0.1]'
+    ? 'bg-white/[0.04] text-white border border-white/[0.14] hover:bg-white/[0.07] hover:border-white/[0.22]'
     : 'bg-black/[0.05] text-neutral-900 border border-black/[0.1] hover:bg-black/[0.1]';
   const landingCtaCard = isDark
     ? 'border border-blue-500/25 bg-blue-500/[0.08]'
@@ -204,7 +204,7 @@ const PricingSection = () => {
       <section className="relative pt-32 sm:pt-48 md:pt-56 lg:pt-44 pb-24 overflow-hidden">
         {/* Desktop bg */}
         <img
-          src={hinnastoBg}
+          src={hinnastoBgCustom}
           alt=""
           className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none hidden sm:block"
           style={{ objectPosition: 'center 40%' }}
@@ -214,7 +214,7 @@ const PricingSection = () => {
         />
         {/* Mobile bg */}
         <img
-          src={hinnastoBgMobile}
+          src={hinnastoBgCustom}
           alt=""
           className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none block sm:hidden"
           style={{ objectPosition: 'center 35%' }}
@@ -255,11 +255,11 @@ const PricingSection = () => {
                   )}
                   <div className="mb-6">
                     <h3 className={`text-xl font-bold mb-1 ${priceColor}`}>{plan.name}</h3>
-                    <p className="text-neutral-500 text-sm">{plan.subtitle}</p>
+                    <p className="text-neutral-300 text-sm">{plan.subtitle}</p>
                   </div>
                   <div className="flex items-baseline gap-1 mb-4">
                     <span className={`text-4xl font-bold ${priceColor}`}>{plan.price} €</span>
-                    <span className="text-neutral-500 text-sm">+ ALV</span>
+                    <span className="text-neutral-300 text-sm">+ ALV</span>
                   </div>
                   <p className={`text-sm leading-relaxed mb-6 ${desc}`}>{plan.description}</p>
                   
@@ -272,7 +272,7 @@ const PricingSection = () => {
                     ))}
                   </div>
                   
-                  <p className={`text-neutral-500 text-xs leading-relaxed mb-6 border-t ${footerBorder} pt-6`}>{plan.footer}</p>
+                  <p className={`text-neutral-300 text-xs leading-relaxed mb-6 border-t ${footerBorder} pt-6`}>{plan.footer}</p>
                   
           <Link
                     to="/yhteystiedot#vedos"
@@ -299,7 +299,7 @@ const PricingSection = () => {
             <div className="text-center mb-16">
               <h2 className={`text-4xl sm:text-5xl md:text-7xl font-extrabold italic leading-tight mb-6 ${heading}`}>
                 Ylläpitopalvelu alkaen<br />
-                <span className="text-[hsl(217,91%,60%)]">200€ / v</span>
+                <span className="text-[hsl(217,91%,60%)]">17€ / kk</span>
               </h2>
               <p className={`text-base sm:text-lg max-w-2xl mx-auto leading-relaxed ${desc}`}>
                 Tekninen ylläpitopalvelu pitää kotisivusi aina ajan tasalla. Varmistamme, että sivut toimivat moitteettomasti vuoden jokaisena päivänä. Päivitykset ja varmuuskopiot huoletta. Nopeus ja tietoturva aina huippuluokkaa. Tuki ja apu, kun sitä tarvitset.
@@ -310,13 +310,13 @@ const PricingSection = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
             {maintenancePlans.map((plan, i) => (
               <FadeIn key={i} delay={i * 0.08}>
-                <div className={`rounded-2xl p-8 transition-all duration-500 h-full flex flex-col ${cardBase}`}>
+                      <div className={`rounded-2xl p-8 transition-all duration-500 h-full flex flex-col ${cardBase}`}>
                   <h3 className={`text-lg font-bold mb-4 ${priceColor}`}>{plan.name}</h3>
                   <div className="flex items-baseline gap-1 mb-6">
                     <span className={`text-3xl font-bold ${priceColor}`}>{plan.price} €</span>
                     <span className="text-neutral-500 text-sm">{plan.unit}</span>
                   </div>
-                  <div className="space-y-3 flex-1">
+                    <div className="space-y-3 flex-1">
                     {plan.features.map((feature, j) => (
                       <div key={j} className="flex items-start gap-3">
                         <CheckCircle2 size={16} className={`${featureIcon} mt-0.5 shrink-0`} />
@@ -330,6 +330,7 @@ const PricingSection = () => {
           </div>
         </div>
       </section>
+
     </>
   );
 };
@@ -338,6 +339,7 @@ const Verkkosivut = () => (
   <>
     <ServicePageLayout
       heroImage={heroVerkkosivut}
+      heroImageObjectClassName="object-cover object-bottom translate-y-16 md:translate-y-20 lg:translate-y-24"
       heroVariant="commercial"
       seo={{
         title: "Verkkosivut yritykselle — FEIM Digital Studio",
@@ -347,6 +349,7 @@ const Verkkosivut = () => (
       hero={{
         label: "",
         title: "Verkkosivut jotka erottuvat",
+        titlePlacement: "overlay-bottom-left",
         intro: "",
         cta: "",
         ctaHref: "/yhteystiedot#vedos"
@@ -354,9 +357,13 @@ const Verkkosivut = () => (
       sections={[]}
       cta={{
         title: "Tilaa maksuton vedos verkkosivustasi",
-        description: "Kerro projektistasi ja saat konkreettisen ehdotuksen siitä, miltä uusi sivustonne voisi näyttää.",
+        description: "",
         buttonText: "Tilaa maksuton vedos",
         buttonHref: "/yhteystiedot#vedos"
+      }}
+      ctaSecondary={{
+        buttonText: "Tutustu prototyyppeihin",
+        buttonHref: "/prototyypit"
       }}
       pricingSlot={<PricingSection />}
     />
