@@ -23,7 +23,7 @@ import { lazy, Suspense, useEffect } from "react";
 const Verkkosivut = lazy(() => import("./pages/Verkkosivut"));
 const WebSovellukset = lazy(() => import("./pages/WebSovellukset"));
 const Prototyypit = lazy(() => import("./pages/Prototyypit"));
-const Palvelut = lazy(() => import("./pages/Palvelut"));
+
 const Referenssit = lazy(() => import("./pages/Referenssit"));
 const Yhteystiedot = lazy(() => import("./pages/Yhteystiedot"));
 const TilaaVedos = lazy(() => import("./pages/TilaaVedos"));
@@ -65,7 +65,7 @@ const App = () => (
               <Suspense fallback={<div className="min-h-screen bg-black" />}>
                 <Routes>
                   <Route path="/" element={<Index />} />
-                  <Route path="/palvelut" element={<Palvelut />} />
+                  
                   <Route path="/verkkosivut" element={<Verkkosivut />} />
                   <Route path="/web-sovellukset" element={<WebSovellukset />} />
                   <Route path="/prototyypit" element={<Prototyypit />} />

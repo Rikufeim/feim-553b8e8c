@@ -31,12 +31,11 @@ const Navbar: React.FC = () => {
             Etusivu
           </Link>
           <div className="relative group">
-            <Link
-              to="/palvelut"
-              className="text-sm font-medium text-neutral-400 hover:text-white transition-colors duration-200 px-4 py-2 rounded-full hover:bg-white/5 inline-flex items-center gap-1"
+            <span
+              className="text-sm font-medium text-neutral-400 hover:text-white transition-colors duration-200 px-4 py-2 rounded-full hover:bg-white/5 inline-flex items-center gap-1 cursor-default select-none"
             >
               Palvelut
-            </Link>
+            </span>
             <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
               <div className="bg-black/95 backdrop-blur-xl border border-white/10 rounded-xl p-2 min-w-[200px] shadow-xl">
                 <Link
@@ -118,12 +117,27 @@ const Navbar: React.FC = () => {
           >
             Etusivu
           </Link>
+          <span className="text-lg text-white/40 font-semibold py-2 px-8">Palvelut</span>
           <Link
-            to="/palvelut"
+            to="/verkkosivut"
             onClick={() => setIsOpen(false)}
-            className="text-2xl text-white/80 hover:text-white font-semibold py-4 px-8 rounded-xl transition-colors"
+            className="text-2xl text-white/80 hover:text-white font-semibold py-3 px-12 rounded-xl transition-colors"
           >
-            Palvelut
+            Verkkosivut
+          </Link>
+          <Link
+            to="/web-sovellukset"
+            onClick={() => setIsOpen(false)}
+            className="text-2xl text-white/80 hover:text-white font-semibold py-3 px-12 rounded-xl transition-colors"
+          >
+            Web-sovellukset
+          </Link>
+          <Link
+            to="/prototyypit"
+            onClick={() => setIsOpen(false)}
+            className="text-2xl text-white/80 hover:text-white font-semibold py-3 px-12 rounded-xl transition-colors"
+          >
+            Prototyypit
           </Link>
           <Link
             to="/yhteystiedot"
